@@ -43,6 +43,25 @@ with lock:
         # create a list (named clist) of nevns environments with the 
         # prefix envprefix
         # add code here
+        clist = []
+        print("This is the name of the program:", sys.argv[0])
+        if len(sys.argv) ==0:
+            print("No arguments")
+            clist.append("cenv0")
+        if len(sys.argv) >0:
+            print("No arguments")
+            clist.append("cenv0")
+
+        if len(sys.argv) > 1:
+            print("This is the first argument:", sys.argv[1])
+        if len(sys.argv) > 2:
+            print("This is the second argument:", sys.argv[2])
+            numberOfItems = sys.argv[2]
+            for x in range(0, int(numberOfItems)):
+                # print("Hello world")
+                clist.append(sys.argv[1]+str(x))
+        print(clist)
+        
     else:
         # load hickle file
         clist = hickle.load(file_path)
@@ -50,11 +69,29 @@ with lock:
         if pmode == WRITE_MODE:
             # append item to end of list
             # add code here
+            clist = []
+            print("This is the name of the program:", sys.argv[0])
+            if len(sys.argv) ==0:
+                print("No arguments")
+                clist.append("cenv0")
+            if len(sys.argv) >0:
+                print("No arguments")
+                clist.append("cenv0")
+
+            if len(sys.argv) > 1:
+                print("This is the first argument:", sys.argv[1])
+            if len(sys.argv) > 2:
+                print("This is the second argument:", sys.argv[2])
+                numberOfItems = sys.argv[2]
+                for x in range(0, int(numberOfItems)):
+                    # print("Hello world")
+                    clist.append(sys.argv[1]+str(x))
         else:    
+            
             # get and remove env from clist
             # add code here
             # return env name
-            print(env)
+            print(clist[0])
 
     # save hickle file
     hickle.dump(clist, file_path, mode="w")
